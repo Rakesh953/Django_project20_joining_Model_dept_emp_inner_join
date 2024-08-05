@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self join</title>
+</head>
+<body>
+    <center>
+        <H1>Self join learning using connecting 3 table employee, department, manager</H1>
+    <table border="3px">
+        <tr>
+            <th>Employee_Name</th>
+            <th>Department_Name</th>
+            <th>Manager_Name</th>
+        </tr>
+        {% for jn in LEDMO %}
+        <tr>
+            <th>{{jn.ename}}</th>
+            <th>{{jn.deptno.dname}}</th>
+            <th>{{jn.mgr.ename}}</th>
+        </tr>
+        {% endfor %}
+    </table>
+    </center>
+</body>
+</html>

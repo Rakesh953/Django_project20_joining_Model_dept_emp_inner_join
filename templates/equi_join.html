@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>equi_join</title>
+</head>
+<body>
+    <center>
+        <h1>equi_join</h1>
+        <table border="3px">
+            <tr>
+                <th>empno</th>
+                <th>ename</th>
+                <th>job</th>
+                <th>sal</th>
+                <th>comm</th>
+                <th>deptno</th>
+                <th>manager</th>
+                <th>dname</th>
+                <th>dloc</th>
+            </tr>
+            {% for ep in LEDO %}
+            <tr>
+                <td>{{ep.empmo}}</td>
+                <td>{{ep.ename}}</td>
+                <td>{{ep.job}}</td>
+                <td>{{ep.sal}}</td>
+                <td>{{ep.comm}}</td>
+                <td>{{ep.deptno.deptno}}</td> <!-- parent table ka data chield table me show karne ke liye parent table ka primary key . chield table ka column name dena hota he  --> 
+                <td>{{ep.mgr}}</td>
+                <td>{{ep.deptno.dname}}</td> <!-- parent table ka data chield table me show karne ke liye parent table ka primary key . chield table ka column name dena hota he  -->
+                <td>{{ep.deptno.dloc}}</td>  <!-- parent table ka data chield table me show karne ke liye parent table ka primary key . chield table ka column name dena hota he  -->
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
